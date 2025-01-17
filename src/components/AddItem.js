@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function AddItem({ onAddProduct }) {
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!name || !price || isNaN(price) || price <= 0) {
-      alert('Please enter valid item details.');
+      alert("Please enter valid item details.");
       return;
     }
 
     onAddProduct({ name, price: parseFloat(price), quantity: 0 });
 
-    setName('');
-    setPrice('');
+    setName("");
+    setPrice("");
   };
 
   return (
@@ -56,7 +56,3 @@ export default function AddItem({ onAddProduct }) {
     </form>
   );
 }
-
-
-
-
