@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
@@ -55,6 +55,15 @@ function App() {
     alert(`You have successfully paid ₹${totalAmount}`);
     handleReset();
   };
+  useEffect(() => {
+    localStorage.setItem("productList", JSON.stringify(productList));
+  }, [productList]);
+  
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem("productList"));
+    if (savedProducts) setProductList(savedProducts);
+  }, []);
+  
 
   return (
     <>

@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Product({ product, onIncrement, onDecrement, onRemove }) {
+export default function Product({
+  product,
+  onIncrement,
+  onDecrement,
+  onRemove,
+}) {
   return (
     <div className="row align-items-center row mt-3">
       <div className="col-5">
